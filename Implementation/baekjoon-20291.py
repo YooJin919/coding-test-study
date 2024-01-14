@@ -1,8 +1,9 @@
-fileNum = int(input())
+import sys
+fileNum = int(sys.stdin.readline().rstrip())
 extensionDict = {}
 
 for i in range(fileNum):
-  fileName = input().split(".")[1]
+  fileName = sys.stdin.readline().rstrip().split(".")[1]
   extensionDict[fileName] = extensionDict.get(fileName, 0) +  1
 
 sortedExtension = sorted(extensionDict)
