@@ -31,3 +31,4 @@ for _ in range(totalNum):
         cnt += 1
   
   print(cnt)
+  
