@@ -10,7 +10,7 @@ minDiff = 999
 for _ in range(memberNum):
   abilityScore.append(list(map(int, sys.stdin.readline().split())))
 
-# 2개 팀으로 나누기
+# 2개 팀으로 나누기 (조합)
 for team1 in combinations(member, memberNum//2):
   team2 = tuple(set(member)-set(team1))
   ability1 = 0
