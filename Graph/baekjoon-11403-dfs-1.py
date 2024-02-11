@@ -1,3 +1,4 @@
+# (1)-1 DFS 2276ms
 from sys import stdin
 from collections import deque
 
@@ -30,7 +31,6 @@ for i in range(N):
     stack = deque()
     visited = [False for _ in range(N)]
     stack.append(i)
-    # visited[i] = True
     dfs(i, j, i)
   
 # 결과 출력
