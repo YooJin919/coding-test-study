@@ -11,25 +11,32 @@ from sys import stdin
 d = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 r, c = map(int, stdin.readline().split())
 map = []
-check = [[0 for _ in range(c+2)] for __ in range(r+2)]
+check = [[0 for _ in range(c)] for __ in range(r)]
 x1, y1, x2, y2 = 9999, 9999, -9999, -9999
 
-map.append(['.']*(c+2))
 for _ in range(r):
-  map.append(['.'] + list(stdin.readline().rstrip()) + ['.'])
-map.append(['.']*(c+2))
+  map.append(list(stdin.readline().rstrip()))
 
-for i in range(r+2):
-  for j in range(c+2):
+for i in range(r):
+  for j in range(c):
     if map[i][j] == '.':
       for [dx, dy] in d:
         ii = i + dx
         jj = j + dy
-        if 0 <= ii < r+2 and 0 <= jj < c+2 and map[ii][jj] == 'X':
+        if 0 <= ii < r and 0 <= jj < c and map[ii][jj] == 'X':
           check[ii][jj] += 1
+    else:
+      if i <= 0:
+        check[i][j] += 1
+      if i >= r-1:
+        check[i][j] += 1
+      if j <= 0:
+        check[i][j] += 1
+      if j >= c-1:
+        check[i][j] += 1
 
-for i in range(r+2):
-  for j in range(c+2):
+for i in range(r):
+  for j in range(c):
     if check[i][j] >= 3:
       map[i][j] = '.'
     if map[i][j] == 'X':
