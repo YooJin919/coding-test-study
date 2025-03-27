@@ -3,7 +3,7 @@
 # 지나간 곳은 다시 방문 불가
 # 집으로 가는 다양한 길 중 거리 K인 경우의 수 출력
 
-# bfs로 갈 수 있는 모든 거리 확인, depth = K 체크
+# dfs로 갈 수 있는 모든 거리 확인, depth = K 체크
 
 from sys import stdin
 
