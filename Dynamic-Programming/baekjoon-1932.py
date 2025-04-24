@@ -14,6 +14,9 @@ for _ in range(N):
 sum[0][0] = triangle[0][0]
 for i in range(1 ,N):
   for j in range(i+1):
-    sum[i][j] = max(sum[i-1][j]+triangle[i][j], sum[i-1][j-1]+triangle[i][j])
+    if j == 0: 
+      sum[i][j] = sum[i-1][j]+triangle[i][j]
+    else: 
+      sum[i][j] = max(sum[i-1][j]+triangle[i][j], sum[i-1][j-1]+triangle[i][j])
     
 print(max(sum[N-1]))
